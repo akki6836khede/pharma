@@ -30,12 +30,6 @@ const page = () => {
         <div className="text-black">
           Welcome to <b>PharmaTrack</b>
         </div>
-        <button
-          className="rounded-full w-[80%] h-12 bg-blue-500 text-white font-bold hover:bg-blue-400 cursor-pointer"
-          onClick={() => signIn("github")}
-        >
-          Sign in with GitHub
-        </button>
 
         <button
           className="rounded-full w-[80%] h-12 bg-blue-500 text-white font-bold hover:bg-blue-400 cursor-pointer"
