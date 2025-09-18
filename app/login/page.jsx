@@ -14,12 +14,16 @@ const LoginPage = () => {
     if (status === "authenticated" && session) {
       const func = async () => {
         try {
+          console.log("Session data:", session); // Debug: Check session contents
           const { email, name, image } = session.user;
+          if (!email) {
+            console.error("Email is undefined in session");
+            return;
+          }
           await saveUserToDB({ name, email, image }); // Save to DB
           router.push(`/userpage/${email}`); // Redirect after success
         } catch (error) {
           console.error("Error saving user or redirecting:", error);
-          // Optionally handle error (e.g., show a message)
         }
       };
       func();
